@@ -1,0 +1,32 @@
+
+Ethernet is defined by the IEEE 802.3 standard
+
+IEEE 802.3 is a collection of standards defining the physical layer and
+data link layer's media access control (MAC) of wired Ethernet.
+    -the IEEE has defined many versions of Ethernet 
+
+
+    Ethernet "base" frame: an Ethernet frame is a "data link layer protocol" data unit and uses
+    the underlying Ethernet physical layer transport mechanisms.
+    In other words, a data unit on an Ethernet link transports an Ethernet frame as its payload
+     the frame -usualy never- gets biger than 1500 bytes.
+    
+                -------------------------------------------------------------------------------------------------------------------
+                |  (7bytes)| S |  (6bytes) | (6bytes)  | (2bytes) |  Min(46bytes)-max(MTU)(1500bytes)    |         (32bit)          | 
+   Layer 1      |  Preamble| F |Destination|  Source   |DATA TYPE |  ...............DATA...............  |           FCS            |
+Physical Layer  |          | D |    MAC    |   MAC     |ETHER TYPE|                                      | (frame check sequence)   |
+                -------------------------------------------------------------------------------------------------------------------
+                ----------------                                                             |          |    
+                physical layer                                                               |   PAD    |
+                    header                                                                   |          |
+                                                                                            ----------
+        --PREAMBLE:(physical layer header)                                                           
+            a collection of bites that tells the network card a frame is comming.
+        --SFD:(start of frame delimiter)
+            
+        --DATA TYPE:
+            defines what kind of data is being carried by the data part, like ipv4, arp ...  
+        --DATA:
+            ---MTU: maximum transmission unit 
+            ---jumbo frame: a frame with a data sequence of more than 1522bytes.(9000bytes)
+            ---the minimum data size is 64bytes but if we can't reach it, the PAD gets added so the min requirement is met. 

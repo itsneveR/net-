@@ -1,0 +1,110 @@
+
+-topology: 
+    a topology a discription of how the network is layed out.
+       -- physical topology:
+            how the computers are layed out.(actual layout)
+       -- logical(digital) topology:  
+            how the data is being sent between the computers(data flow)
+
+--various topologies: 
+    ---the bus topology :(the oldest)
+        all the hosts are connected by a centralized single cable.
+        and they all share the same bandwidth so as we add host the speed 
+        gets slower.
+
+        100mb/s         80mb/s          40mb/s          20mb/s 
+        ------          -------         -------        -------
+       | host1 | ----> | host2 | ----> | host3 | ---> | host4 |
+        ------          -------         -------        -------
+
+    ---the Ring Topology:(outdated)
+        frames will travel around the ring.
+
+            |host 1|    
+           /         \
+          /           \
+         /             \
+     |host6|          |host2|
+          \              \
+           \              \
+            \              \
+          |host5|       |host3|
+              \          /
+               \        / 
+                \      / 
+                |host4| 
+
+    ---The Star(hub-and-spoke) topology:(common topology)
+        multipul hosts connect to a centralized single box(switch, not hub ..)
+        and the box determines to which and how the network frames will be sent to the hosts
+
+
+                            |host1|     |host2|      |host3|
+                                 \        |           /
+                                  \       |          /
+                                   \      |         /
+                                -------------------
+                                |                 |
+                                |  box(switch,..) |
+                                |                 |
+                                -------------------
+
+    --- The hybrid topologies:
+        the combination of topologies above. for example the star-bus topology
+
+    *NOTE: the hub is considerd as a bus topology, so if a networks useed a hub
+    the physical for may look like a star but it's actually a bus.
+
+    ---the mesh topology:
+        all the hosts are connected to each other.
+        the advantage is that if one goes out the stream of date won't be distrupted.(fault tolerance)
+
+        the mesh topology while might not be really practical on for a wired network situation
+        but it's really useful and handy for wireless situations 
+
+
+
+
+-coaxial cable:
+-twisted par cable:
+    they're twisted so they can reduce Electromagnetic Interference(EMI) 
+    --unshielded twisted pair(utp): != stp== shielded twisted pair
+        --four or more pairs of cable
+        ---max distance:100m (325ft)
+        ---connector: RJ-45
+        ---standards: TIA/EIA-568A , TIA/EIA-568B
+
+    --UTP Category Rating(CAT):
+
+Category	Standard Bandwidth	    Max Data Rate	     Shielding
+Cat5e	    100MHz (up to 350)	      1000Mbps	        UTP or STP
+Cat6	    250MHz (up to 550)	      1000Mbps	        UTP or STP
+Cat6A	    500MHz (up to 550)	      10Gbps	        UTP or STP
+Cat7	    600MHz	                  10Gbps	        Shielded only
+Cat8	    2000MHz	                  25Gbps or 40Gbps	Shielded only 
+
+-fiber optic cable: 
+        all of them have two connectors on each side(duplex)
+        one carries the light away and one brings the light to the card.
+
+    --multimode cable: carries LED signals
+    --single-mode cable: carries laser signals- sutable more for far distances
+
+    --connectors: 
+    ST connector
+    SC connector 
+    FC connector(dont confuse with ST)
+    LC connector
+    MT_RJ connector
+
+    NOTE: 
+        if you want to connect two fiber optic cable together, you have to polish them first.
+        different types of polishing:
+            UPC(ultra physical contact)
+            APC(angled physical contact) 7 degree angle 
+
+
+-fire rating for cables:
+
+    
+        
